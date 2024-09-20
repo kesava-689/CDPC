@@ -8,8 +8,9 @@ import PlacementAnalytics from './PlacementAnalytics';
 import Alumni from './Alumni';
 import Dashboard from './Dashboard';
 import Login from './Login';
-import myImage from "file:///home/rguktrkvalley/Downloads/campus.jpeg";
+// import myImage from "file:///home/rguktrkvalley/Downloads/campus.jpeg";
 import './Home.css';
+import HomeSection from './HomeSection';
 
 const HomeContent = () => {
   const location = useLocation();
@@ -45,7 +46,7 @@ const HomeContent = () => {
             </p>
           </div>
 
-          <img src={myImage} style={{ width: '100%', height: '100%', filter: 'blur(4px)' }} />
+          <img src='/img1.jpg' style={{ width: '100%', height: '100%', filter: 'blur(4px)' }} />
         </div>
         
         <div style={{ display: 'flex', justifyContent: 'center', background: 'rgb(9, 44, 95)', padding: '10px' }}>
@@ -71,6 +72,9 @@ const HomeContent = () => {
             Aiming to place the maximum number of students through campus & off-campus interviews conducted by the top companies.            </div>
           </div>
         </div>
+        <br/>
+        <br/>
+        <HomeSection/>
       </div>
     );
   }
