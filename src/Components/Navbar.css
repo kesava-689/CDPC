@@ -1,0 +1,136 @@
+/* Base navbar styles */
+.navbar {
+  /* position: 'sticky';
+  top: 0;
+  z-index: 1000; */
+  background-color: rgb(9, 44, 95);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-links.show{
+  z-index: 99;
+  height: fit-content;
+}
+/* Navbar logo styles */
+.navbar-logo {
+  color: #fff;
+  padding-left: 20px;
+  font-size: 1rem;
+}
+
+/* Notification icon */
+.notification-icon {
+  color: white;
+  font-size: larger;
+}
+
+/* Navbar links */
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on links */
+.navbar-links a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+/* Style for active links */
+.navbar-links a.active {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* General link styles */
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hamburger icon for mobile */
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* Bottom container for splitting areas */
+.bottom-container {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Left and right side flexbox areas */
+.left-side {
+  flex: 1 1 20%;
+  background-color: #f4f4f4;
+  padding: 1rem;
+}
+
+.right-side {
+  flex: 1 1 80%;
+  background-color: #e0e0e0;
+  padding: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  /* Stack the links in a vertical menu */
+  .navbar-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 50%;
+    height: 30%;
+    overflow: hidden;
+    background-color: rgb(9, 44, 95);
+    flex-direction: column;
+    transition: height 0.2s ease;
+  }
+
+  .navbar-links.show {
+    height: 60vh; /* Show the menu */
+  }
+
+  .navbar-links li {
+    text-align: center;
+    margin: 15px 0;
+    
+  }
+
+  /* Display toggle button for smaller devices */
+  .navbar-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust logo and font sizes on smaller screens */
+  .navbar-logo {
+    font-size: 1.2rem;
+  }
+  .navbar-links.show {
+    height: 65vh; /* Show the menu */
+  }
+  .navbar-links a {
+    font-size: 1rem;
+  }
+}
