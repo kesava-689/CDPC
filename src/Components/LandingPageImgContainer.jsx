@@ -62,7 +62,7 @@ const LandingPageImgContainer = () => {
           backdropFilter: 'blur(2px)',
           color: '#ffffff',
           fontWeight: 'bold',
-          zIndex: 1,
+          zIndex: 100,
           lineHeight: '1.5',
           borderRadius: '15px',
           fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' }, // Responsive font size
@@ -74,7 +74,7 @@ const LandingPageImgContainer = () => {
         <Typography variant="h3" component="h1" gutterBottom>
           Welcome to CDPC
         </Typography>
-        <Typography variant="body1">
+        <Typography variant="body1" sx={{fontSize:'17px'}}>
           The Career Development and Placement Cell (CDPC) at RGUKT, R.K. Valley equips students with the skills and training needed to become competent professionals. Through a constantly updated curriculum and expert faculty, CDPC bridges the gap between industry and academia. The cell focuses on holistic development, offering training in communication, leadership, and problem-solving skills. CDPC also conducts seminars on personality development and interpersonal skills to enhance student employability. Its mission is to prepare students for successful campus placements.
         </Typography>
       </MotionContainer>
