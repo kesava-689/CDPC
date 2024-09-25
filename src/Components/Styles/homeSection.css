@@ -1,0 +1,10 @@
+/* Custom styles for the specific timeline element */
+/* Change the color of the middle vertical line */
+.custom-timeline .vertical-timeline::before {
+    background-color: #18373f !important; /* Force the color change */
+  }
+  
+  /* Change the line for a specific timeline element */
+  .vertical-timeline-element--alumni::before {
+    background-color: #219ebc !important; /* Change this to your desired color */
+  }

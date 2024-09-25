@@ -1,179 +1,120 @@
-import { React, useState, useEffect, useRef } from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
-import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
-import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined';
-import AllInclusiveOutlinedIcon from '@mui/icons-material/AllInclusiveOutlined';
-
-function HomeSection() {
-  const [open, setOpen] = useState(false);
-  const [dialogType, setDialogType] = useState(null);
-  const [activeIndex, setActiveIndex] = useState(-1);
-  const itemsRef = useRef([]);
-
-  const handleClickOpen = (type) => {
-    setDialogType(type);
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    setDialogType(null);
-  };
-
-  const timelineItems = [
-    {
-      icon: <ShareOutlinedIcon sx={{ color: 'white' }} />,
-      title: 'Alumni',
-      description: 'Our alumni have achieved success and excelled in diverse professions worldwide...',
-      dialogType: 1,
-    },
-    {
-      icon: <StarBorderOutlinedIcon sx={{ color: 'white' }} />,
-      title: 'Rankings',
-      description: 'Recognized for excellence, RGUKT RK Valley is a leading institute in technical education...',
-      dialogType: 2,
-    },
-    {
-      icon: <WorkspacePremiumOutlinedIcon sx={{ color: 'white' }} />,
-      title: 'Admission Process',
-      description: 'RGUKT RK Valley selects talented students through a rigorous process...',
-      dialogType: 3,
-    },
-    {
-      icon: <AllInclusiveOutlinedIcon sx={{ color: 'white' }} />,
-      title: 'All Round Development',
-      description: 'Skills, aptitude, and perception shape personal and professional identity...',
-      dialogType: 4,
-    },
-  ];
-
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      threshold: 0.3, // Adjust the threshold as necessary
-    };
-
-    const observerCallback = (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setActiveIndex(index); // Set the active index when it comes into view
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    itemsRef.current.forEach((item) => {
-      if (item) {
-        observer.observe(item);
-      }
-    });
-
-    return () => {
-      if (itemsRef.current) {
-        itemsRef.current.forEach((item) => {
-          if (item) observer.unobserve(item);
-        });
-      }
-    };
-  }, []);
-
+import React from 'react';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { motion } from 'framer-motion';
+import ShareIcon from '@mui/icons-material/Share';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import AllInclusiveIcon from '@mui/icons-material/AllInclusive';
+import { Container,Typography } from '@mui/material';
+import './Styles/homeSection.css'
+function TimelineWithAnimation() {
   return (
-    <Container maxWidth="lg" sx={{ padding: { xs: '15px', lg: '60px' }, color: 'white' }}>
-      <Container sx={{ backgroundColor: 'blue' }}>
-        <Typography variant="h5" sx={{ textAlign: 'center', fontWeight: '500', marginBottom: '20px', color: '#000' }}>
+    <Container>
+      <br/>
+      <Container maxWidth="lg" sx={{ padding: '10px',textAlign:'center' }}>
+        <Typography variant="h4" gutterBottom>
           Why IIIT RK Valley
         </Typography>
-        <Typography variant="body1" sx={{ textAlign: 'center', marginBottom: '40px', fontSize: { xs: '12px', lg: '14px' }, color: '#000' }}>
-          Rajiv Gandhi University of Knowledge Technologies (RGUKT), RK Valley, was established in 2008 with the goal of providing high-quality education to the rural youth of Andhra Pradesh, India...
+        <Typography variant="body1" paragraph >
+        Rajiv Gandhi University of Knowledge Technologies (RGUKT), RK Valley, was established in 2008 to offer quality education to rural youth in Andhra Pradesh. The university is renowned for its unique six-year integrated B.Tech program, which combines secondary and engineering education. RGUKT focuses on research, innovation, and the holistic development of students in the fields of engineering, technology, and sciences, aiming to shape them into skilled professionals and leaders. Education at RGUKT heavily relies on Information Technology, providing each student with a laptop for a tech-enhanced learning experience. The curriculum incorporates modern teaching methods such as Learning by Doing, Learning by Example, and Problem-based Learning. Online lectures are supplemented with problem-solving sessions to reinforce concepts, fostering an interactive and practical approach to education.
+
         </Typography>
       </Container>
+      <Container sx={{ width: '100%' }}>
+          <VerticalTimeline >
+          {/* First element */}
+          <VerticalTimelineElement
+            className="vertical-timeline-element--alumni"
+            contentStyle={{ backgroundColor: '#73A5c6', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid  rgb(9, 44, 95)' }}
+            iconStyle={{ background: 'rgb(9, 44, 95)', color: '#fff' }}
+            icon={<ShareIcon />}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+            <Typography variant="h4" gutterBottom>
+              Alumni
+            </Typography>
+            <Typography variant="body1" paragraph>
+            Our alumni, successful across various fields worldwide, contribute to the institution's growth by inspiring current students and fostering collaboration. Through events and meetings, they stay connected, support development, and strengthen the college's legacy.
+            </Typography>
+            </motion.div>
+          </VerticalTimelineElement>
 
-      <Timeline position="alternate" sx={{ color: 'white' }}>
-        {timelineItems.map((item, index) => (
-          <TimelineItem key={index} ref={(el) => (itemsRef.current[index] = el)}>
-            <TimelineSeparator>
-              <TimelineDot
-                sx={{
-                  backgroundColor: activeIndex === index ? '#00bcd4' : 'rgb(9, 44, 95)',
-                  transition: 'background-color 0.5s ease',
-                }}
-              >
-                {item.icon}
-              </TimelineDot>
-              {index < timelineItems.length - 1 && (
-                <TimelineConnector
-                  sx={{
-                    backgroundColor: activeIndex >= index ? '#00bcd4' : '#000',
-                    transition: 'background-color 0.5s ease',
-                  }}
-                />
-              )}
-            </TimelineSeparator>
-            <TimelineContent sx={{ paddingBottom: '30px', backgroundColor: 'rgb(9, 44, 95)' }}>
-              <Typography variant="h6" sx={{ fontWeight: '600', color: '#000' }}>
-                {item.title}
-              </Typography>
-              <Typography variant="body1" sx={{ fontSize: { xs: '12px', lg: '14px' }, color: '#000' }}>
-                {item.description}
-              </Typography>
-              <Button
-                variant="contained"
-                onClick={() => handleClickOpen(item.dialogType)}
-                sx={{
-                  backgroundColor: 'rgb(9, 44, 95)',
-                  color: 'white',
-                  fontSize: '10px',
-                  padding: '3px 6px',
-                  marginTop: '16px',
-                  '&:hover': {
-                    backgroundColor: '#073061',
-                  },
-                }}
-              >
-                Know more
-              </Button>
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
+          {/* Second element */}
+          <VerticalTimelineElement
+          className="vertical-timeline-element--rankings"
+          contentStyle={{ backgroundColor: '#42b79d', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  rgb(9, 44, 95)' }}
+          iconStyle={{ background: 'rgb(9, 44, 95)', color: '#fff' }}
+            icon={<StarOutlineIcon />}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+            <Typography variant="h4" gutterBottom>
+              Rankings
+            </Typography>
+            <Typography variant="body1" paragraph>
+            RGUKT RK Valley is recognized for its unique six-year integrated B.Tech program focused on rural youth, with a strong emphasis on academic excellence, innovation, and research. The university has made significant progress in student development and placements, earning a B+ grade from NAAC, reflecting its commitment to quality education and continuous improvement.
+            </Typography>
+            </motion.div>
+          </VerticalTimelineElement>
 
-      {/* Dialog Box */}
-      <Dialog open={open} onClose={handleClose} aria-labelledby="dialog-title" aria-describedby="dialog-description">
-        <DialogTitle id="dialog-title">
-          {dialogType === 1 && 'Alumni'}
-          {dialogType === 2 && 'Rankings'}
-          {dialogType === 3 && 'Admission Process'}
-          {dialogType === 4 && 'All Round Development'}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="dialog-description">
-            {dialogType === 1 && <p>Our alumni have achieved remarkable success across a wide range of professions...</p>}
-            {dialogType === 2 && <p>RGUKT RK Valley, known for its unique integrated B.Tech program, is dedicated to nurturing future leaders...</p>}
-            {dialogType === 3 && <p>All students admitted to RGUKT RK Valley are chosen through a meticulous selection process...</p>}
-            {dialogType === 4 && <p>Recognizing that skills, aptitude, and perception are critical components of an individual's growth...</p>}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">Close</Button>
-        </DialogActions>
-      </Dialog>
+          {/* Third element */}
+          <VerticalTimelineElement
+            className="vertical-timeline-element--admission"
+            contentStyle={{ backgroundColor: '#219ebc', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid  rgb(9, 44, 95)' }}
+            iconStyle={{ background: 'rgb(9, 44, 95)', color: '#fff' }}
+            icon={<WorkspacePremiumIcon />}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Typography variant="h4" gutterBottom>
+              Admission Process
+            </Typography>
+            <Typography variant="body1" paragraph>
+            RGUKT RK Valley admits students primarily based on their Class 10 grades, ensuring that high-performing candidates, especially from rural areas, are selected for its integrated engineering program. This merit-based process helps nurture exceptional talent in the fields of engineering and technology.
+            </Typography>
+            </motion.div>
+          </VerticalTimelineElement>
+
+          {/* Education element */}
+          <VerticalTimelineElement
+            className="vertical-timeline-element--alumni"
+            contentStyle={{ backgroundColor: '#ffb703', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid  rgb(9, 44, 95)' }}
+            iconStyle={{ background: 'rgb(9, 44, 95)', color: '#fff' }}
+            icon={<AllInclusiveIcon />}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+            <Typography variant="h4" gutterBottom>
+              All Round Development
+            </Typography>
+            <Typography variant="body1" paragraph>
+                RGUKT RK Valley fosters all-round development by offering diverse opportunities beyond academics, including research, industry interactions, and extracurricular activities. This approach ensures students develop technical expertise, leadership, communication, and problem-solving skills, preparing them for successful careers and impactful contributions to their fields.
+            </Typography>
+            </motion.div>
+          </VerticalTimelineElement>
+        </VerticalTimeline>
+      </Container>
+     
     </Container>
   );
 }
 
-export default HomeSection;
+export default TimelineWithAnimation;

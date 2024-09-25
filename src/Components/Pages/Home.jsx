@@ -4,6 +4,8 @@ import {Box} from '@mui/material';
 import ObjectivesSection from '../ObjectivesSection';
 // import MyTimeline from '../TimeLine';
 import HomeSection from '../HomeSection';
+import DirectorMessage from '../DirectorMessage';
+import ContactUs from '../ContactUS';
 const Home = () => {
   return (
     <div>
@@ -11,7 +13,9 @@ const Home = () => {
         <LandingPageImgContainer />
         <ObjectivesSection/>
         {/* <MyTimeline/> */}
-        <HomeSection/>
+        <HomeSection/><br/>
+        <DirectorMessage/>
+        <ContactUs/>
         {/* Other components or content */}
       </Box>
     </div>
