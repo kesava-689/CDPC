@@ -33,8 +33,9 @@ const LandingPageImgContainer = () => {
   return (
     <Box
       sx={{
-        paddingTop: { xs: '-50px', sm: '-20px', md: '40px' }, // Adjust padding for different sizes
-        height: '100vh', // Full screen height
+        // paddingTop: { xs: '-50px', sm: '-20px', md: '40px' }, // Adjust padding for different sizes
+        height: {md:'100vh',xs:'35vh'},
+        width:{xs:'100%'}, // Full screen height
         backgroundImage: 'url(./rkv_img1.jpg)', // Replace with your image URL
         backgroundSize: {
           xs: 'contain', // Ensure the image fits within the viewport for small screens

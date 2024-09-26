@@ -4,7 +4,8 @@ import {Box} from '@mui/material';
 import ObjectivesSection from '../ObjectivesSection';
 // import MyTimeline from '../TimeLine';
 import HomeSection from '../HomeSection';
-import DirectorMessage from '../DirectorMessage';
+// import DirectorMessage from '../DirectorMessage';
+import Test from  '../Test'
 import ContactUs from '../ContactUS';
 const Home = () => {
   return (
@@ -14,7 +15,6 @@ const Home = () => {
         <ObjectivesSection/>
         {/* <MyTimeline/> */}
         <HomeSection/><br/>
-        <DirectorMessage/>
         <ContactUs/>
         {/* Other components or content */}
       </Box>

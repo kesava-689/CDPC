@@ -1,0 +1,10 @@
+.slick-list {
+    height: 200px; /* Set the height of the carousel */
+  }
+  
+  .slick-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  

@@ -45,7 +45,7 @@ function Navbar() {
 
   return (
     <AppBar position="fixed" sx={{ backgroundColor: 'rgb(9, 44, 95)',zIndex:'1000'}}>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography
             variant="h4"
@@ -125,14 +125,14 @@ function Navbar() {
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
+              letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
             RK VALLEY-CDPC
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } ,paddingLeft:'100px'}}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
             {pages.map((page) => (
               <NavLink to={page.path} key={page.name} style={{ textDecoration: 'none' }}>
                 <Button
@@ -146,42 +146,47 @@ function Navbar() {
               </NavLink>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="User Avatar" src="/static/images/avatar/1.jpg" sx={{height:"25px",width:'25px'}}/>
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}
-                sx={{
-                    '&:hover': {
-                      bgcolor: '#bbbbbb', // Change this to your desired hover color
-                      color: 'white', // Change text color on hover if needed
-                    }
-                  }}
-                >
-                  <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+          <Box sx={{flexGrow: { xs: 1, md: 0 } }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu}
+                 sx={{ p: 1, position:{xs: 'relative', md: 'static'},left:{xs:-13} }} 
+                 aria-controls="menu-appbar" aria-haspopup="true">
+                  <Avatar alt="User Avatar" src="/static/images/avatar/1.jpg" sx={{ height: 25, width: 25 }} />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: '45px' , ml:{md:'30px',xs:'20px'}}}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => (
+                  <MenuItem
+                    key={setting}
+                    onClick={handleCloseUserMenu}
+                    sx={{
+                      '&:hover': {
+                        bgcolor: '#bbbbbb',
+                        color: '#ffffff',
+                      },
+                    }}
+                  >
+                    <Typography sx={{ textAlign: 'center', p: 1 }}>{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+
         </Toolbar>
       </Container>
     </AppBar>

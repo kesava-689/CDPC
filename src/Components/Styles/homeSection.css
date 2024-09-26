@@ -1,10 +1,20 @@
-/* Custom styles for the specific timeline element */
-/* Change the color of the middle vertical line */
-.custom-timeline .vertical-timeline::before {
-    background-color: #18373f !important; /* Force the color change */
+
+  .vertical-timeline::before {
+    background: rgb(9, 44, 95); /* Your line color */
+    width: 3px; /* Adjust the width of the line */
+    height: 1100px;
+    margin-bottom: 100px;
   }
-  
-  /* Change the line for a specific timeline element */
-  .vertical-timeline-element--alumni::before {
-    background-color: #219ebc !important; /* Change this to your desired color */
+  .vertical-timeline-element {
+    margin-bottom: 10px !important; /* Use !important to force the rule */
   }
+  .vertical-timeline .vertical-timeline-element-content {
+    padding-bottom: 10px !important; /* Reduce padding between elements */
+  }
+
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline .vertical-timeline-element {
+    margin-bottom: 0px !important;
+    height: auto !important;  /* If height is also an issue */
+  }
+}

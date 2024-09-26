@@ -12,10 +12,10 @@ function TimelineWithAnimation() {
   return (
     <Container>
       <br/>
-      <Container maxWidth="lg" sx={{ padding: '10px',textAlign:'center' }}>
-        <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom sx={{textAlign:'center'}}>
           Why IIIT RK Valley
         </Typography>
+      <Container maxWidth="lg" sx={{ display: 'flex', justifyContent: 'space-between', paddingX:{xs:0,md:2}  }}>
         <Typography variant="body1" paragraph >
         Rajiv Gandhi University of Knowledge Technologies (RGUKT), RK Valley, was established in 2008 to offer quality education to rural youth in Andhra Pradesh. The university is renowned for its unique six-year integrated B.Tech program, which combines secondary and engineering education. RGUKT focuses on research, innovation, and the holistic development of students in the fields of engineering, technology, and sciences, aiming to shape them into skilled professionals and leaders. Education at RGUKT heavily relies on Information Technology, providing each student with a laptop for a tech-enhanced learning experience. The curriculum incorporates modern teaching methods such as Learning by Doing, Learning by Example, and Problem-based Learning. Online lectures are supplemented with problem-solving sessions to reinforce concepts, fostering an interactive and practical approach to education.
 
@@ -30,6 +30,7 @@ function TimelineWithAnimation() {
             contentArrowStyle={{ borderRight: '7px solid  rgb(9, 44, 95)' }}
             iconStyle={{ background: 'rgb(9, 44, 95)', color: '#fff' }}
             icon={<ShareIcon />}
+            style={{marginBottom: '10px !important'}}
           >
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -52,6 +53,7 @@ function TimelineWithAnimation() {
           contentArrowStyle={{ borderRight: '7px solid  rgb(9, 44, 95)' }}
           iconStyle={{ background: 'rgb(9, 44, 95)', color: '#fff' }}
             icon={<StarOutlineIcon />}
+            style={{ marginBottom: '10px', paddingBottom: '0px' }}
           >
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -106,7 +108,7 @@ function TimelineWithAnimation() {
               All Round Development
             </Typography>
             <Typography variant="body1" paragraph>
-                RGUKT RK Valley fosters all-round development by offering diverse opportunities beyond academics, including research, industry interactions, and extracurricular activities. This approach ensures students develop technical expertise, leadership, communication, and problem-solving skills, preparing them for successful careers and impactful contributions to their fields.
+                RGUKT RK Valley promotes holistic development by offering opportunities in research interactions industry, and extracurriculars. This approach helps students build technical expertise, leadership, and communication skills. It prepares them for successful careers and impactful contributions in their fields.
             </Typography>
             </motion.div>
           </VerticalTimelineElement>
