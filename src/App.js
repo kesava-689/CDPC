@@ -1,6 +1,6 @@
 
 import AppRouter from './Components/AppRouter';
-
+import "./App.css"
 function App() {
   return (
     <div className="App">

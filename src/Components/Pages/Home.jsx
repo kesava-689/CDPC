@@ -2,11 +2,18 @@ import React from 'react';
 import LandingPageImgContainer from '../LandingPageImgContainer';
 import {Box} from '@mui/material';
 import ObjectivesSection from '../ObjectivesSection';
-// import MyTimeline from '../TimeLine';
+// import MyTimeline from '../TiLine';
 import HomeSection from '../HomeSection';
 // import DirectorMessage from '../DirectorMessage';
 import Test from  '../Test'
 import ContactUs from '../ContactUS';
+import Manager from '../Manager';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import DirectorsMessage from '../DirectorMessage';
 const Home = () => {
   return (
     <div>
@@ -14,8 +21,10 @@ const Home = () => {
         <LandingPageImgContainer />
         <ObjectivesSection/>
         {/* <MyTimeline/> */}
-        <HomeSection/><br/>
+        <HomeSection/>
+        <DirectorsMessage />
         <ContactUs/>
+        <Manager/>
         {/* Other components or content */}
       </Box>
     </div>

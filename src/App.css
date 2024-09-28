@@ -1,0 +1,401 @@
+/* Global Styles */
+:root {
+    --main-color: rgb(9, 44, 95);
+  }
+  
+  * {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+  }
+  
+  
+  @keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
+  
+  .heading{
+    color:var(--main-color);
+    text-align: center;
+    padding-bottom: 2rem;
+    text-transform: capitalize;
+    font-size: 4rem;
+  }
+  .heading span{
+    text-transform: capitalize;
+  }
+  .btn{
+    margin-top: 1 rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    background-color: #666;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .btn:hover{
+    background-color:var(--main-color);
+  }
+  /* director information*/
+  .directors-message {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  
+  .message-content {
+    display: flex; /* Use flexbox to align the image and text side by side */
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .director-image {
+    width:35rem; /* Adjust image size */
+    height: auto;
+    border-radius: 1rem;
+    background-color: pink;
+  }
+  
+  .message-text {
+    flex: 1; /* Allow the text to take the remaining space */
+    padding: 1rem;
+    margin: 2rem;
+  }
+  
+  .message-text h3 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+  
+  .message-text p {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .message-text .read-more {
+    font-weight: bold;
+    color: blue;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+  
+  .message-text .read-more:hover {
+    text-decoration: underline;
+  }
+  .director-info p {
+    font-size: 2rem;
+    margin: 5px 0;
+  }
+  .director-info p small{
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+  .director-info strong {
+    font-weight: bold;
+  }
+  /* Manager Section Styles */
+  .manager {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  .manager div{
+    margin-bottom: 1rem;
+  }
+  .manager a{
+    margin-top: 0;
+    font-size: 2.6rem;
+    color: black;
+  }
+  .manager a i{
+    padding-right: 0.5rem;
+    color: var(--main-color);
+  }
+  .manager a:hover i{
+    padding-right: 1.5rem;
+    color: #fff;
+  }
+  .manager .box {
+    border-radius: 0.5rem;
+    background-color: #333;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .manager .box .fa-quote-right {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: var(--main-color);
+    font-size: 2rem;
+  }
+  
+  .manager .box a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: #eee;
+  }
+  .manager .box a i {
+    padding-right: 0.5rem;
+    color: var(--main-color);
+  }
+  
+  .manager .box a:hover i {
+    padding-right: 1.5rem;
+    color: #fff;
+  }
+  
+  .manager .box .user {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  .manager .box .user .user-info{
+    text-align: left;
+  }
+  .manager .box .user img {
+    border-radius: 1rem;
+    background-color: pink;
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+  }
+  
+  .manager .box .user h3 {
+    font-size: 2rem;
+    color: #fff;
+  }
+  .manager .box .user span{
+    font-size: 1.5rem;
+    color: #eee;
+  }
+  
+  /* Swiper styles */
+  .swiper-button-next, .swiper-button-prev {
+    color: #000;
+  }
+  
+  .swiper-pagination-bullet {
+    background-color: #000;
+  }
+  
+  /* Contact Section Styles */
+  
+  
+  
+  
+  .contact .contact-container {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: stretch; /* Ensure that both divs stretch to the same height */
+    gap: 2rem;
+  }
+  
+  .contact form {
+    width: 100%;
+    max-width: 100%; /* Form takes up 45% of the available space */
+    background-color: whitesmoke;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact .placement-officer {
+    width: 100%;
+    max-width: 40%; /* Placement officer div takes up 45% of the available space */
+    background-color:whitesmoke;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .contact .office-address {
+    width: 30%;
+    background-color: whitesmoke;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+  }
+  
+  /* Styling for office address */
+  .contact .office-address h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .contact .office-address a {
+    display: block;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+  }
+  
+  .contact .office-address a i {
+    padding-right: 0.5rem;
+    color: var(--main-color);
+  }
+  
+  .contact .office-address a:hover i{
+    padding-right: 1.5rem;
+    color:black;
+  }
+  
+  
+  
+  .contact .placement-officer{
+    border-radius: 0.5rem;
+    padding: 2rem;
+    position: relative;
+  }
+  .contact .placement-officer a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: black;
+  }
+  .contact .placement-officer a i {
+    padding-right: 0.5rem;
+    color: var(--main-color);
+  }
+  .contact .placement-officer a:hover i {
+    padding-right: 1.5rem;
+    color:black;
+  }
+  .contact .placement-officer .user {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  .contact .placement-officer .user .user-info{
+    text-align: left;
+  }
+  .contact .placement-officer .user img {
+    background-color: pink;
+    height: 30rem;
+    width: 25rem;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+  .contact .placement-officer .user h3 {
+    font-size: 2rem;
+    color:black;
+  }
+  .contact .placement-officer .user span{
+    font-size: 1.5rem;
+    color: black;
+  }
+  
+  
+  
+  .contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+  }
+  
+  .contact form .inputBox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .contact form .inputBox input,
+  .contact form textarea {
+    width: 100%;
+    background-color: #333;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0.7rem 0;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: none;
+  }
+  
+  .contact form .inputBox input::placeholder,
+  .contact form textarea::placeholder {
+    color: #eee;
+    text-transform: capitalize;
+  }
+  
+  .contact form .inputBox input:focus,
+  .contact form textarea:focus {
+    background-color: #555;
+  }
+  
+  .contact form .inputBox input {
+    width: 49%;
+  }
+  
+  .contact form textarea {
+    resize: none;
+  }
+  
+  /* Footer Section Styles */
+  .footer {
+    background-color: rgb(1, 44, 95);
+  }
+  
+  .footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .footer .box-container .box h3 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: white;
+  }
+  
+  .footer .box-container .box a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: white;
+  }
+  
+  .footer .box-container .box a i {
+    padding-right: 0.5rem;
+    color: white;
+  }
+  
+  .footer .box-container .box a:hover i {
+    padding-right: 1.5rem;
+    color: black;
+  }
+  
+  .footer .credit {
+    text-align: center;
+    border-top: 0.1rem solid #222;
+    color: #fff;
+    padding: 2rem;
+    padding-top: 2.5rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  
+  .footer .credit span {
+    color: var(--main-);
+  }
